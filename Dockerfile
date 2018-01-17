@@ -7,7 +7,7 @@ ENV PATH $PATH:/usr/local/go/bin
 # install build deps
 RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:ethereum/ethereum
-RUN apt-get update && apt-get install -y wget git build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
+RUN apt-get update && apt-get install -y wget git build-essential libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
 
 # install constellation
 #RUN wget -q https://github.com/jpmorganchase/constellation/releases/download/v0.0.1-alpha/ubuntu1604.zip && unzip ubuntu1604.zip
