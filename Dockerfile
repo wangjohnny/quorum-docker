@@ -20,8 +20,8 @@ RUN rm ${GOREL}
 RUN git clone https://github.com/jpmorganchase/quorum.git
 RUN cd quorum && git checkout tags/v2.0.0 && make all &&  cp build/bin/geth /usr/local/bin && cp build/bin/bootnode /usr/local/bin
 
-wget -q http://qa-wxtrust-jws.wancloud.io/porosity
-mv porosity /usr/local/bin && chmod 0755 /usr/local/bin/porosity
+RUN wget -q http://qa-wxtrust-jws.wancloud.io/porosity
+RUN mv porosity /usr/local/bin && chmod 0755 /usr/local/bin/porosity
 
 RUN cd /
 RUN git clone https://github.com/jpmorganchase/quorum-examples
