@@ -5,6 +5,7 @@ ENV CREL constellation-0.2.0-ubuntu1604
 ENV PATH $PATH:/usr/local/go/bin
 
 # install build deps
+RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:ethereum/ethereum
 RUN apt-get update && apt-get install -y wget git build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
 
