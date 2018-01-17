@@ -16,7 +16,7 @@ Docker for Quorum Blockchain
 	root@7cb755d39893:/quorum-examples/examples/7nodes# ./raft-init.sh
 	root@7cb755d39893:/quorum-examples/examples/7nodes# ./raft-start.sh
 	
-	stop.sh is not available becasue of killall is not existing in docker
+	stop.sh is not available becasue command killall is not existing in docker
 	root@7cb755d39893:/quorum-examples/examples/7nodes# ./stop.sh
 
 
@@ -25,7 +25,3 @@ Rererence : https://github.com/jpmorganchase/quorum-examples/tree/master/example
 
 ### Permissions
 Rererence : https://github.com/jpmorganchase/quorum-examples/tree/master/examples/permissions
-
-
-
-
