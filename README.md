@@ -3,18 +3,20 @@ Docker for Quorum Blockchain
 
 ## Getting Started
 
-git clone https://github.com/agriessel/quorum-docker
-cd quorum-docker
-docker build -t quorum .
+- git clone https://github.com/wangjohnny/quorum-docker
+- cd quorum-docker
+- docker build -t quorum .
 
 ## Using Quorum Docker Image
-	docker run -ti --name quoruminstance quorum bash
+	docker run -ti --name quorum-instance quorum bash
 
 ## Initialize 7 Nodes, start/stop
 
 	root@7cb755d39893:/# cd /quorum-examples/examples/7nodes/
-	root@7cb755d39893:/quorum-examples/examples/7nodes# ./init.sh
-	root@7cb755d39893:/quorum-examples/examples/7nodes# ./start.sh
+	root@7cb755d39893:/quorum-examples/examples/7nodes# ./raft-init.sh
+	root@7cb755d39893:/quorum-examples/examples/7nodes# ./raft-start.sh
+	
+	stop.sh is not available becasue of killall is not existing in docker
 	root@7cb755d39893:/quorum-examples/examples/7nodes# ./stop.sh
 
 
