@@ -20,7 +20,7 @@ RUN mv go /usr/local/go
 RUN rm ${GO_REL}
 
 # install constellation
-RUN wget -q http://qa-wxtrust-jws.wancloud.io/$CREL.tar.xz && tar xfJ $CONSTELLATION_REL.tar.xz
+RUN wget -q http://qa-wxtrust-jws.wancloud.io/$CONSTELLATION_REL.tar.xz && tar xfJ $CONSTELLATION_REL.tar.xz
 RUN cp $CONSTELLATION_REL/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
 RUN rm -rf $CONSTELLATION_REL
 
