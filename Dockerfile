@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Wang Jian <wangjian@wancloud.io>
 
-ENV GOREL go1.7.3.linux-amd64.tar.gz
-ENV CREL constellation-0.2.0-ubuntu1604
+ENV GO_REL go1.7.3.linux-amd64.tar.gz
+ENV CONSTELLATION_REL constellation-0.2.0-ubuntu1604
 ENV PATH $PATH:/usr/local/go/bin
 
 ADD sources.list /etc/apt/sources.list
@@ -14,15 +14,15 @@ RUN apt-get update && apt-get install -y wget git build-essential libdb-dev libl
 RUN cd /root
 
 # install golang
-RUN wget -q http://qa-wxtrust-jws.wancloud.io/${GOREL}
-RUN tar -xvzf ${GOREL}
+RUN wget -q http://qa-wxtrust-jws.wancloud.io/${GO_REL}
+RUN tar -xvzf ${GO_REL}
 RUN mv go /usr/local/go
-RUN rm ${GOREL}
+RUN rm ${GO_REL}
 
 # install constellation
-RUN wget -q http://qa-wxtrust-jws.wancloud.io/$CREL.tar.xz && tar xfJ $CREL.tar.xz
-RUN cp $CREL/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
-RUN rm -rf $CREL
+RUN wget -q http://qa-wxtrust-jws.wancloud.io/$CREL.tar.xz && tar xfJ $CONSTELLATION_REL.tar.xz
+RUN cp $CONSTELLATION_REL/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
+RUN rm -rf $CONSTELLATION_REL
 
 # make/install quorum
 RUN git clone https://github.com/jpmorganchase/quorum.git
