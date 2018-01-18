@@ -11,6 +11,7 @@ ADD sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository ppa:ethereum/ethereum
 RUN apt-get update && apt-get install -y wget git build-essential libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
 
+# root is the working dir
 RUN cd /root
 
 # install golang
@@ -31,5 +32,5 @@ RUN cd quorum && git checkout tags/v2.0.0 && make all && cp build/bin/geth /usr/
 RUN wget -q http://qa-wxtrust-jws.wancloud.io/porosity
 RUN mv porosity /usr/local/bin && chmod 0755 /usr/local/bin/porosity
 
-RUN cd /
+# install example
 RUN git clone https://github.com/jpmorganchase/quorum-examples
