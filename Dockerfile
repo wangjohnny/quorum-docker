@@ -14,15 +14,14 @@ RUN apt-get update && apt-get install -y wget git build-essential libdb-dev libl
 RUN cd /root
 
 # install golang
-RUN wget -q http://qa-wxtrust-jws.wancloud.io/${GO_REL}
-RUN tar -xvzf ${GO_REL}
+RUN wget -q http://qa-wxtrust-jws.wancloud.io/${GO_REL} && tar -xvzf ${GO_REL}
 RUN mv go /usr/local/go
 RUN rm ${GO_REL}
 
 # install constellation
 RUN wget -q http://qa-wxtrust-jws.wancloud.io/$CONSTELLATION_REL.tar.xz && tar xfJ $CONSTELLATION_REL.tar.xz
 RUN cp $CONSTELLATION_REL/constellation-node /usr/local/bin && chmod 0755 /usr/local/bin/constellation-node
-RUN rm -rf $CONSTELLATION_REL
+RUN rm -rf $CONSTELLATION_REL && rm -rf $CONSTELLATION_REL.tar.xz
 
 # make/install quorum
 RUN git clone https://github.com/jpmorganchase/quorum.git
